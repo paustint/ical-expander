@@ -8,11 +8,11 @@ const zonesJson = fs.readFileSync('./zones.json');
 const zones = JSON.parse(zonesJson);
 
 const out = {};
-Object.keys(zones.zones).forEach((z) => {
+Object.keys(zones.zones).forEach(z => {
   out[z] = zones.zones[z].ics;
 });
 
-Object.keys(zones.aliases).forEach((z) => {
+Object.keys(zones.aliases).forEach(z => {
   const aliasTo = zones.aliases[z].aliasTo;
   if (zones.zones[aliasTo]) {
     out[z] = zones.zones[aliasTo].ics;
@@ -21,4 +21,4 @@ Object.keys(zones.aliases).forEach((z) => {
   }
 });
 
-fs.writeFileSync('./zones-compiled.json', JSON.stringify(out));
+fs.writeFileSync('../src/zones-compiled.json', JSON.stringify(out));

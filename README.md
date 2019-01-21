@@ -1,8 +1,19 @@
-# ical-expander 📅💥 [![npm version](https://badge.fury.io/js/ical-expander.svg)](https://badge.fury.io/js/ical-expander) [![Build Status](https://travis-ci.org/mifi/ical-expander.svg?branch=master)](https://travis-ci.org/mifi/ical-expander) [![Coverage Status](https://coveralls.io/repos/github/mifi/ical-expander/badge.svg?branch=master)](https://coveralls.io/github/mifi/ical-expander?branch=master) [![Known Vulnerabilities](https://snyk.io/test/github/mifi/ical-expander/badge.svg)](https://snyk.io/test/github/mifi/ical-expander)
+# ical-expander-ts 📅💥
 ICS / iCal / iCalendar parser / expander.
 
+## Foked Notice
+**FORKED FROM** https://github.com/mifi/ical-expander-ts
+### Changes
+- Converted to TypeScript
+  - Compiled output is es3 and should be compatible with all browsers as well as node
+- Automatically load Timezone data from `ics` string unless explicitly registered prior to instantiating class
+- Allowed optional import of Timezone data, JSON file only read if `registerTimezones()` is explicitly called
+  - You must call `registerTimezones()` prior instantiating `IcalExpander`
+- Structure is slightly modified, which impacts require/import
+  - `const icalExpander = require('...');` OR `import { IcalExpander, registerTimezones, resetTimezones } from '...'`
+  - Optional type imports if using TypeScript: `IcalExpanderOptions`, `IcalExpanderTimes`, `IcalExpanderReturn`
 
-
+## Original Readme
 Wrapper around [ical.js](https://github.com/mozilla-comm/ical.js) that automatically handles `EXDATE` (excluded recursive occurrences), `RRULE` and recurring events overridden by `RECURRENCE-ID`.
 
 Also handles timezones, and includes timezones from the [IANA Time Zone Database](https://www.iana.org/time-zones), so that it parses correctly when a timezone definition is not available in the ICS file itself.
@@ -14,7 +25,7 @@ processing large ICS files and with high maxIterations values.
 ## Install
 
 ```
-npm install ical-expander
+npm install ical-expander-ts
 ```
 
 ⚠️ Warning: This package uses ES6 features, and might require transpiling if used in browsers
@@ -24,7 +35,7 @@ npm install ical-expander
 Download .ics from google calendar for example.
 
 ```
-const IcalExpander = require('ical-expander');
+const IcalExpander = require('ical-expander-ts');
 const fs = require('fs');
 
 const ics = fs.readFileSync('./basic.ics', 'utf-8');

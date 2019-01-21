@@ -1,22 +1,22 @@
 {
-  "name": "ical-expander",
+  "name": "ical-expander-ts",
   "version": "2.0.0",
   "description": "ICS / iCal / iCalendar parser / expander",
   "main": "index.js",
   "scripts": {
-    "test": "env TZ=Etc/UTC mocha && eslint .",
+    "test": "env TZ=Etc/UTC mocha",
     "coveralls": "istanbul cover _mocha && istanbul-coveralls"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mifi/ical-expander.git"
+    "url": "git+https://github.com/paustint/ical-expander.git"
   },
-  "author": "Mikael Finstad <finstaden@gmail.com>",
+  "author": "Austin Turner <paustint@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mifi/ical-expander/issues"
+    "url": "https://github.com/paustint/ical-expander/issues"
   },
-  "homepage": "https://github.com/mifi/ical-expander#readme",
+  "homepage": "https://github.com/paustint/ical-expander#readme",
   "engines": {
     "node": ">=4"
   },
@@ -26,14 +26,13 @@
   "devDependencies": {
     "env": "0.0.2",
     "eslint": "^3.18.0",
-    "eslint-config-airbnb-base": "^11.1.2",
-    "eslint-plugin-import": "^2.2.0",
     "istanbul": "^0.4.5",
     "istanbul-coveralls": "^1.0.3",
-    "mocha": "^3.2.0"
+    "mocha": "^3.2.0",
+    "typescript": "^3.2.4"
   },
   "files": [
-    "index.js",
-    "zones-compiled.json"
+    "dist/index.js",
+    "dist/zones-compiled.json"
   ]
 }
